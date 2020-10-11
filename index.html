@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meme Gallery</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+  <h1>Meme Gallery</h1>
+  <div>
+    <input type="text" name="" id="meme-url" placeholder="Paste an image URL Here">
+    <button id="get-meme">New Post</button>
+  </div>
+  <div class="container">
+
+  </div>
+
+</body>
+<script>
+  var urlText = document.getElementById('meme-url')
+  var button = document.getElementById('get-meme')
+  var container = document.querySelector('.container')
+
+  button.addEventListener('click', makeMeme)
+
+  function makeMeme() {
+    if (!urlText.value) {
+      return
+    }
+
+    var pic = document.createElement('img')
+    pic.setAttribute('src', urlText.value)
+    container.appendChild(pic)
+
+    urlText.value = ''
+  }
+
+</script>
+
+</html>
